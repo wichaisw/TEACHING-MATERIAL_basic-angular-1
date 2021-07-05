@@ -7,10 +7,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * property binding
 * two-way binding (ngModel)
 
+Basic Decorator
+* @Input
+* @Output
+* @Viewchild (optional)
+
 Basic Directive
 * ngIf
 * ngFor, ngForOf
-* ngClass
+* ngClass 
+
+Basic Lifecycle Hooks
+* OnInit
+* OnChanges
 
 **Form**
 * Basic Form 
