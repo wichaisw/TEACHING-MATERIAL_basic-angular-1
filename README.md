@@ -7,25 +7,29 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * property binding
 * two-way binding (ngModel)
 
+Basic Directive
+* ngIf
+* ngFor, ngForOf
+* ngClass
+
 **Form**
 * Basic Form 
 * Reactive Form (formControl, formBuilder, Validator)
 
 **Angular Material**
-* Dialog's entry point
+* Dialog (entry component)
 * mat-error
 * provide date-format (optional)
 
 **Http Client** (RxJs)
+* synchronous with Oberservable
 
 **Routing** (optional)
 * authGuard
 * Lazy-loading
 
 **Module Structure**
-* Core Module
-    * services
-* Shared Module
-    * interface
+* Core Module (services, header, sidebar, interceptor)
+* Shared Module (interfaces or models, pipes, constants, components)
 * Feature Module
 
