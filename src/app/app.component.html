@@ -1,17 +1,28 @@
-<div class="border rounded bg-blue-500 m-4 p-2">
+<div class="border rounded bg-blue-500 m-4 p-2 flex flex-col space-y-2">
   <!-- String interpolation -->
-  <h1>{{title}}</h1> 
+  <h1 class="text-lg">{{title}}</h1> 
 
   <!-- property binding -->
-  <input type="text" [value]='content1' (change)="onContentChange($event)"/>
-  <br>
-  <span>{{content1}}</span>
+  <div class="flex flex-col font-bold">
+    <label for="content1">property binding</label>
+    <input type="text" id='content1' [value]='content1' (input)="onContentChange($event)" />
+    <span>{{content1}}</span>
+  </div>
 
-  <br>
   <!-- two-way binding -->
-  <input type="text" [(ngModel)]="content2" />
-  <!-- behind the scene -->
-  <!-- <input type="text" [ngModel]="content2"  (ngModelChange)="content2 = $event"/> -->
-  <br>
-  <span>{{content2}}</span>
+  <div class="flex flex-col font-bold">
+    <label for="content2">ngModel</label>
+    <input type="text" id='content2' [(ngModel)]="content2" />
+    <!-- behind the scene -->
+    <!-- <input type="text" [ngModel]="content2"  (ngModelChange)="content2 = $event"/> -->
+    <span>{{content2}}</span>
+  </div>
+  
+  <!-- Access template & DOM with @ViewChild -->
+  <div class="flex flex-col font-bold">
+    <label for="content3">@ViewChild</label>
+    <input type="text" id='content3' #content3Input (input)='onContentChange3()'>
+    <span>{{content3}}</span>
+  </div>
+
 </div>

@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Basic Decorator
 * @Input
 * @Output
-* @Viewchild (optional)
+* @Viewchild (DOM accessing)
 
 Basic Directive
 * ngIf
