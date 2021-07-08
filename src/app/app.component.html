@@ -25,4 +25,24 @@
     <span>{{content3}}</span>
   </div>
 
+  <!-- Basic Directive -->
+  <div  class="flex flex-col font-bold">
+    <label for="content4">Basic Directive: *ngFor, *ngIf, [ngClass]</label>
+    <select name="content4" id="content4"  [(ngModel)]='content4'>
+      <option *ngFor='let option of contentOptions' class="p-2" [value]="option.value">{{option.name}}</option>
+    </select>
+    <span *ngIf="content4; else noValue">value {{content4}}</span>
+    <ng-template #noValue>
+      <span>no value</span>
+    </ng-template>
+
+    <span [ngClass]="{
+      'text-red-500': !content4,
+      'text-green-600': content4
+    }"
+    >
+      O
+    </span>
+  </div>
+
 </div>
