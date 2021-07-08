@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 interface ContentOptions {
   name: string;
@@ -9,13 +9,14 @@ interface ContentOptions {
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string = 'Basic Angular Form';
   content1: any = '';
   content2: any = '';
   content3: string = '';
   @ViewChild('content3Input') content3Input: ElementRef = new ElementRef<string>('');
   content4: number | null = null;
+  content5: string = 'happy birthday'
 
   contentOptions: ContentOptions[] = [
     {name: 'test1', value: 1},
@@ -23,6 +24,9 @@ export class AppComponent {
     {name: 'test3', value: 3},
   ]
 
+  ngOnInit() {
+    console.info("init!")
+  }
 
   onContentChange(event: Event) {
     this.content1 = (<HTMLInputElement>event.target).value;
