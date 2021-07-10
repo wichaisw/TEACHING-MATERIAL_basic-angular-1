@@ -1,4 +1,4 @@
-<div class="border rounded bg-blue-500 m-4 p-2 flex flex-col space-y-2">
+<div class=" flex flex-col space-y-2">
   <!-- String interpolation -->
   <h1 class="text-lg">{{title}}</h1> 
 
@@ -45,6 +45,8 @@
     </span>
   </div>
 
+  
   <span>{{inputMessage}}</span>
-
+  
+  <button (click)="onClickButton(content1)"  class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Send Content1 to Parent</button>
 </div>

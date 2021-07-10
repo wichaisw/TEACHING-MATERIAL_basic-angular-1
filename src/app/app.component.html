@@ -1,4 +1,7 @@
-<div>
+<div class="border rounded bg-gradient-to-r from-green-400 to-blue-500 m-4 p-2">
     <!-- @Input -->
-  <app-data-binding-example [parentMessage]='content5'></app-data-binding-example>
+  <app-data-binding-example (sendToParent)="setChildContent($event)" [parentMessage]='content5'></app-data-binding-example>
+
+  <span>Child Content: {{childContent}}</span>
+
 </div>

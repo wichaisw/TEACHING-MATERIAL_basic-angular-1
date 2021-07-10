@@ -5,9 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  content5: string = 'happy birthday'
-
-
+  content5: string = 'message from parent'
+  childContent: string = '';
+  
+  setChildContent(eventValue: string) {
+    this.childContent = eventValue;
+  }
 }
 
 

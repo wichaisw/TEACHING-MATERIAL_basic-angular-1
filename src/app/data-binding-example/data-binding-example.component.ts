@@ -1,5 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-
+import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 interface ContentOptions {
   name: string;
   value: number;
@@ -12,13 +11,14 @@ interface ContentOptions {
   ]
 })
 export class DataBindingExampleComponent implements OnInit {
+  @ViewChild('content3Input') content3Input: ElementRef = new ElementRef<string>('');
+  @Input('parentMessage') inputMessage: string = '';
+  @Output() sendToParent = new EventEmitter<string>();
   title: string = 'Basic Angular Form';
   content1: any = '';
   content2: any = '';
   content3: string = '';
-  @ViewChild('content3Input') content3Input: ElementRef = new ElementRef<string>('');
   content4: number | null = null;
-  @Input('parentMessage') inputMessage: string = '';
   
   contentOptions: ContentOptions[] = [
     {name: 'test1', value: 1},
@@ -38,4 +38,7 @@ export class DataBindingExampleComponent implements OnInit {
     this.content3 = this.content3Input.nativeElement.value;
   };
 
+  onClickButton(value: string) {
+    this.sendToParent.emit(value);
+  }
 }
