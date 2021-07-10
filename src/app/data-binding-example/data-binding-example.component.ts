@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 interface ContentOptions {
   name: string;
   value: number;
@@ -10,7 +10,7 @@ interface ContentOptions {
   styles: [
   ]
 })
-export class DataBindingExampleComponent implements OnInit {
+export class DataBindingExampleComponent implements OnInit, OnChanges {
   @ViewChild('content3Input') content3Input: ElementRef = new ElementRef<string>('');
   @Input('parentMessage') inputMessage: string = '';
   @Output() sendToParent = new EventEmitter<string>();
@@ -28,6 +28,10 @@ export class DataBindingExampleComponent implements OnInit {
 
   ngOnInit() {
     console.info("init!")
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
   }
 
   onContentChange(event: Event) {

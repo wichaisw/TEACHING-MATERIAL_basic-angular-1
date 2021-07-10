@@ -1,7 +1,16 @@
 <div class="border rounded bg-gradient-to-r from-green-400 to-blue-500 m-4 p-2">
-    <!-- @Input -->
-  <app-data-binding-example (sendToParent)="setChildContent($event)" [parentMessage]='content5'></app-data-binding-example>
+  title: string = 'Basic Angular Form';
 
-  <span>Child Content: {{childContent}}</span>
+  
+  
+  <!-- @Output -->
+  <app-data-binding-example (sendToParent)="setChildContent($event)" [parentMessage]='content5'></app-data-binding-example>
+  
+  <div class="flex flex-col">
+    <!-- @Input / ngOnChanges -->
+    <label for="content5">Parent Content: </label>
+    <input type="text" id="content5" [(ngModel)]="content5" >
+    <span>Child Content: {{childContent}}</span>
+  </div>
 
 </div>
