@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ChildComponent } from './child/child.component';
+import { DataBindingExampleComponent } from './data-binding-example/data-binding-example.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    DataBindingExampleComponent,
   ],
   imports: [
     BrowserModule,
